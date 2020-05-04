@@ -3,12 +3,12 @@
   "version": "0.0.1",
   "private": true,
   "engines": {
-    "node": "10.16.x"
+    "node": "10.19.x"
   },
   "scripts": {
     "debug": "nodemon index.js",
-    "docker:build": "docker build . -t plexinc/slack-music-notifications",
-    "docker:start": "docker run -it --rm -p 8000:8000 --name music-webhooks plexinc/slack-music-notifications",
+    "docker:build": "docker build . -t kinduff/slack-music-notifications",
+    "docker:start": "docker run -it --rm -p 8000:8000 --name music-webhooks kinduff/slack-music-notifications",
     "start": "node index.js"
   },
   "dependencies": {
