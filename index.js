@@ -14,6 +14,10 @@ const asyncRoute = (handler) => {
 app.post('/', upload.single('thumb'), asyncRoute(async (req, res) => {
   const payload = JSON.parse(req.body.payload);
 
+  if (req.query.debug === "true" || process.env.DEBUG) {
+    console.log(payload)
+  }
+
   const token = req.query.token || process.env.TOKEN;
   const username = req.query.username || process.env.USERNAME;
   const isValidUser = (
